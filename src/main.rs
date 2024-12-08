@@ -1,5 +1,7 @@
 use std::io;
 
+
+
 fn main() {
 
 
@@ -11,12 +13,17 @@ fn main() {
 
       let results: Result<f64, String> = calculate(&input);
 
-      println!("Result of expression: {:?}", results);
+      // println!("Result of expression: {:?}", results);
+      match results {
+        Ok(value) => println!("Results of operation is: {}", value),
+        Err(msg)=> println!("{}", msg),
+      }
 
   }
   
    
     }
+
   
   fn calculate(expression: &str) -> Result<f64, String> {
 
@@ -43,6 +50,11 @@ fn main() {
      "+" => Ok(left + right),
      "-" => Ok(left - right),
      "*" => Ok(left * right), 
-     _ => return Err("Error".into())
+     "/" => if right == 0.0 {
+        return Err("Result is undefined".into());
+     } else {
+      Ok(left / right)
+     }
+     _ => return Err("Input a valid operator".into())
     }
   }
