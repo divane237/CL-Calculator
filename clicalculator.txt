@@ -1,0 +1,7 @@
+Key Features in a CLI-Based Calculator
+Input Field: Allows users to type mathematical expressions.
+Output Field: Displays results immediately after evaluation.
+Mathematical Functions: Includes operations like addition, subtraction, multiplication, division, and potentially more complex operations like trigonometry (sin, cos), logarithms, or powers.
+Error Handling: Catches invalid inputs and provides meaningful error messages.
+bash
+Copy code
